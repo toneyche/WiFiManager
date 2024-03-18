@@ -21,7 +21,7 @@
 #endif
 
 #include <vector>
-
+extern float fahrenheit; // 声明全局变量
 // #define WM_MDNS            // includes MDNS, also set MDNS with sethostname
 // #define WM_FIXERASECONFIG  // use erase flash fix
 // #define WM_ERASE_NVS       // esp32 erase(true) will erase NVS 
