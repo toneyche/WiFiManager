@@ -2014,10 +2014,7 @@ void WiFiManager::handleInfo() {
       F("apssid"),
       F("apip"),
       F("apbssid"),
-      F("apmac"),
-    #ifdef HAVE_DS18B20	
-      F("temperature")
-    #endif
+      F("apmac")
     };
 
   #elif defined(ESP32)
@@ -2314,13 +2311,6 @@ String WiFiManager::getInfoData(String id){
     p = FPSTR(HTTP_INFO_aboutdate);
     p.replace(FPSTR(T_1),String(__DATE__ " " __TIME__));
   }
-  #ifdef HAVE_DS18B20
-  else if(id==F("temperature")){
-  p = F("Temperature: ");
-  p += String(fahrenheit, 2); // 假设fahrenheit是一个float类型的变量
-  p += F(" °F");
-  }
-  #endif
   return p;
 }
 
